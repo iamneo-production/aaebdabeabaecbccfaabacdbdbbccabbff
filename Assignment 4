@@ -1,0 +1,29 @@
+import io.cucumber.java.en.*;
+
+public class FeedbackStepDefs {
+
+    @Given("the user navigates to JavaTpoint.com")
+    public void navigateToJavaTpoint() {
+        // Implement the logic to navigate to JavaTpoint.com
+    }
+
+    @When("the user clicks on Feedback, then the Feedback page opens")
+    public void clickFeedbackLink() {
+        // Implement the logic to click on the Feedback link and open the Feedback page
+    }
+
+    @And("the user submits feedback message")
+    public void submitFeedbackMessage() {
+        // Implement the logic to enter and submit the feedback message
+    }
+
+    @Then("feedback should be received on the admin page")
+    public void verifyFeedbackReceived() {
+        // Implement the logic to verify that the feedback is received on the admin page
+    }
+
+    @And("admin can reply to the user")
+    public void replyToUser() {
+        // Implement the logic for the admin to reply to the user
+    }
+}
