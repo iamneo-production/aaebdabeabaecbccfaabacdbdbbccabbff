@@ -5,6 +5,8 @@ public class FeedbackStepDefs {
     @Given("the user navigates to JavaTpoint.com")
     public void navigateToJavaTpoint() {
         // Implement the logic to navigate to JavaTpoint.com
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
     }
 
     @When("the user clicks on Feedback, then the Feedback page opens")
