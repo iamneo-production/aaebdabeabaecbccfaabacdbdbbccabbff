@@ -7,25 +7,39 @@ public class FeedbackStepDefs {
         // Implement the logic to navigate to JavaTpoint.com
         System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
         driver = new ChromeDriver();
+        driver.get("https://www.javatpoint.com/");
     }
 
     @When("the user clicks on Feedback, then the Feedback page opens")
     public void clickFeedbackLink() {
         // Implement the logic to click on the Feedback link and open the Feedback page
+        WebElement feedbackLink = driver.findElement(By.linkText("Feedback"));
+        feedbackLink.click();
     }
 
     @And("the user submits feedback message")
     public void submitFeedbackMessage() {
         // Implement the logic to enter and submit the feedback message
-    }
+        WebElement feedbackInput = driver.findElement(By.id("feedbackInput"));
+        feedbackInput.sendKeys("This is a test feedback message.");
+        WebElement submitButton = driver.findElement(By.id("submitFeedbackButton"));
+        submitButton.click();
+    }  
 
     @Then("feedback should be received on the admin page")
     public void verifyFeedbackReceived() {
         // Implement the logic to verify that the feedback is received on the admin page
+        String receivedFeedback = "This is a test feedback message.";
+        Assert.assertEquals(receivedFeedback, feedbackMessage);
     }
 
     @And("admin can reply to the user")
     public void replyToUser() {
         // Implement the logic for the admin to reply to the user
+        WebElement replyInput = driver.findElement(By.id("replyInput"));
+        adminReply = "Thank you for your feedback!";
+        replyInput.sendKeys(adminReply);
+        WebElement sendButton = driver.findElement(By.id("sendReplyButton"));
+        sendButton.click();
     }
 }
